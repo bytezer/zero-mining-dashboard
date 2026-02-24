@@ -30,7 +30,7 @@ function App() {
         </div>
       </header>
 
-      <nav className="flex gap-2 mb-8 overflow-x-auto pb-2">
+      <nav className="flex justify-center gap-2 mb-8 overflow-x-auto pb-2">
         {tabs.map((tab) => (
           <button
             key={tab.id}
