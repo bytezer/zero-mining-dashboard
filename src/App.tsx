@@ -1,8 +1,15 @@
-import { useState } from "react";
-import { ListaViajes } from "@zero/components/ListaViajes";
-import { TonelajeMaterial } from "@zero/components/TonelajeMaterial";
-import { DiferenciaTonelaje } from "@zero/components/DiferenciaTonelaje";
-import { CopilotExample } from "@zero/components/CopilotExample";
+import { useState, lazy, Suspense } from "react";
+import { SystemLoader } from "@zero/components/SystemLoader";
+
+// Lazy imports de los módulos
+const ListaViajes = lazy(() => import("@zero/components/ListaViajes"));
+const TonelajeMaterial = lazy(
+  () => import("@zero/components/TonelajeMaterial"),
+);
+const DiferenciaTonelaje = lazy(
+  () => import("@zero/components/DiferenciaTonelaje"),
+);
+const CopilotExample = lazy(() => import("@zero/components/CopilotExample"));
 
 function App() {
   const [activeTab, setActiveTab] = useState(1);
@@ -15,7 +22,6 @@ function App() {
   ];
 
   return (
-    /* min-h-screen + w-full + bg-dark-bg */
     <div className="min-h-screen w-full bg-dark-bg text-white p-4 md:p-8 font-sans selection:bg-neon-red selection:text-white">
       {/* Header */}
       <header className="max-w-7xl mx-auto mb-12 border-b border-white/10 pb-6 flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
@@ -30,9 +36,9 @@ function App() {
             Analytics Production System v1.0
           </p>
         </div>
-        <div className="flex items-center gap-2 bg-white/5 px-4 py-1 rounded-full border border-neon-red border-2">
+        <div className="flex items-center gap-2 bg-white/5 px-4 py-1 rounded-full border border-neon-red border-2 shadow-[0_0_10px_rgba(255,0,0,0.2)]">
           <span className="text-neon-red animate-pulse text-xs">●</span>
-          <span className="text-[15px]  uppercase tracking-tighter font-bold">
+          <span className="text-[15px] uppercase tracking-tighter font-bold">
             System Online
           </span>
         </div>
@@ -57,10 +63,12 @@ function App() {
         ))}
       </nav>
 
-      {/* Contenedor de Contenido */}
-      <main className="max-w-7xl mx-auto min-h-[600px] animate-in fade-in duration-500">
-        <div className="bg-card-bg/50 backdrop-blur-sm border border-white/5 rounded-lg p-1">
-          {tabs.find((t) => t.id === activeTab)?.component}
+      {/* Contenedor de Contenido con Suspense */}
+      <main className="max-w-7xl mx-auto min-h-[600px]">
+        <div className="bg-card-bg/50 backdrop-blur-sm border border-white/5 rounded-lg p-1 animate-in fade-in duration-700">
+          <Suspense fallback={<SystemLoader />}>
+            {tabs.find((t) => t.id === activeTab)?.component}
+          </Suspense>
         </div>
       </main>
 

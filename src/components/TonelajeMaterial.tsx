@@ -1,7 +1,7 @@
 import { useProductionData } from "@zero/hooks/useProductionData";
 import { InsightNote } from "@zero/components/InsightNote";
 
-export const TonelajeMaterial = () => {
+const TonelajeMaterial = () => {
   const { actual } = useProductionData();
 
   const grouped = actual.reduce(
@@ -65,3 +65,5 @@ export const TonelajeMaterial = () => {
     </div>
   );
 };
+
+export default TonelajeMaterial;

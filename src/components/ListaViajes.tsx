@@ -2,7 +2,7 @@ import ReactECharts from "echarts-for-react";
 import { useProductionData } from "@zero/hooks/useProductionData";
 import { InsightNote } from "@zero/components/InsightNote";
 
-export const ListaViajes = () => {
+const ListaViajes = () => {
   const { actual } = useProductionData();
 
   // Agrupar datos por zona y equipo
@@ -62,3 +62,5 @@ export const ListaViajes = () => {
     </div>
   );
 };
+
+export default ListaViajes;

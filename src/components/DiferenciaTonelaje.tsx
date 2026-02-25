@@ -2,7 +2,7 @@ import ReactECharts from "echarts-for-react";
 import { useProductionData } from "@zero/hooks/useProductionData";
 import { InsightNote } from "@zero/components/InsightNote";
 
-export const DiferenciaTonelaje = () => {
+const DiferenciaTonelaje = () => {
   const { actual, previous } = useProductionData();
 
   const getTonsByRelHour = (dataset: any[]) => {
@@ -60,3 +60,5 @@ export const DiferenciaTonelaje = () => {
     </div>
   );
 };
+
+export default DiferenciaTonelaje;

@@ -2,7 +2,7 @@ import ReactECharts from "echarts-for-react";
 import { useProductionData } from "@zero/hooks/useProductionData";
 import { InsightNote } from "@zero/components/InsightNote";
 
-export const CopilotExample = () => {
+const CopilotExample = () => {
   const { actual, previous } = useProductionData();
 
   const totalAct = actual.reduce((s, c) => s + c.tons, 0);
@@ -68,3 +68,5 @@ export const CopilotExample = () => {
     </div>
   );
 };
+
+export default CopilotExample;
