@@ -1,5 +1,6 @@
 import ReactECharts from "echarts-for-react";
 import { useProductionData } from "../hooks/useProductionData";
+import { InsightNote } from "./InsightNote";
 
 export const DiferenciaTonelaje = () => {
   const { actual, previous } = useProductionData();
@@ -52,13 +53,10 @@ export const DiferenciaTonelaje = () => {
         Diferencial de Productividad (Turno Act vs Prev)
       </h2>
       <ReactECharts option={option} />
-      <p className="mt-6 text-gray-400 text-sm italic border-l-2 border-neonRed pl-4">
-        Abordé esto mapeando las horas relativas de ambos turnos para asegurar
-        una comparación equitativa (matching). Elegí un gráfico de áreas para
-        resaltar visualmente los picos de diferencia. Si tuviera más tiempo,
-        incluiría un desglose de las causas de la diferencia (por ejemplo,
-        demora de equipos) para dar mayor contexto operativo.
-      </p>
+      <InsightNote
+        textSize="text-base"
+        text="Abordé esto mapeando las horas relativas de ambos turnos para asegurar una comparación equitativa (matching). Elegí un gráfico de áreas para resaltar visualmente los picos de diferencia."
+      />
     </div>
   );
 };

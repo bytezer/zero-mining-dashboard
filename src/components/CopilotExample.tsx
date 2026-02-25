@@ -1,5 +1,6 @@
 import ReactECharts from "echarts-for-react";
 import { useProductionData } from "../hooks/useProductionData";
+import { InsightNote } from "./InsightNote";
 
 export const CopilotExample = () => {
   const { actual, previous } = useProductionData();
@@ -56,12 +57,14 @@ export const CopilotExample = () => {
           <ReactECharts option={option} style={{ height: "100%" }} />
         </div>
       </div>
-      <p className="mt-8 text-gray-500 text-xs italic">
-        Elegí un gráfico de dona (Pie adaptado) por su capacidad de mostrar
+
+      <InsightNote
+        textSize="text-base"
+        text="Elegí un gráfico de dona (Pie adaptado) por su capacidad de mostrar
         proporciones simples de forma impactante. Implementé una lógica
-        heurística directa para el "insight". En una versión avanzada, usaría
-        una arquitectura de micro-servicios para el análisis de datos masivos.
-      </p>
+        heurística directa para el 'insight'. En una versión avanzada, usaría
+        una arquitectura de micro-servicios para el análisis de datos masivos."
+      />
     </div>
   );
 };

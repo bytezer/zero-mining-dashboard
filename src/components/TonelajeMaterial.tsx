@@ -1,4 +1,5 @@
 import { useProductionData } from "../hooks/useProductionData";
+import { InsightNote } from "./InsightNote";
 
 export const TonelajeMaterial = () => {
   const { actual } = useProductionData();
@@ -52,13 +53,15 @@ export const TonelajeMaterial = () => {
           </tbody>
         </table>
       </div>
-      <p className="mt-6 text-gray-400 text-sm italic border-l-2 border-white pl-4">
-        Utilicé un método de reducción (reduce) para agrupar las métricas y el
+
+      <InsightNote
+        textSize="text-base"
+        text="Utilicé un método de reducción (reduce) para agrupar las métricas y el
         método sort nativo de JavaScript para el ordenamiento descendente.
         Seleccioné una tabla minimalista con Tailwind para mantener la claridad
         del reporte. Con más tiempo, añadiría exportación a CSV y paginación
-        para mejorar la experiencia del usuario.
-      </p>
+        para mejorar la experiencia del usuario."
+      />
     </div>
   );
 };

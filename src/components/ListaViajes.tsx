@@ -1,5 +1,6 @@
 import ReactECharts from "echarts-for-react";
 import { useProductionData } from "../hooks/useProductionData";
+import { InsightNote } from "./InsightNote";
 
 export const ListaViajes = () => {
   const { actual } = useProductionData();
@@ -49,14 +50,15 @@ export const ListaViajes = () => {
         Tonelaje por Equipo y Zona
       </h2>
       <ReactECharts option={option} style={{ height: "400px" }} />
-      <p className="mt-6 text-gray-400 text-sm italic border-l-2 border-neonRed pl-4">
-        Abordé esta solución utilizando un objeto de acumulación para pivotar
+      <InsightNote
+        textSize="text-base"
+        text="Abordé esta solución utilizando un objeto de acumulación para pivotar
         los datos de JSON plano a una estructura matricial. Elegí ECharts por su
         excelente manejo de series dinámicas y personalización visual. Consideré
         Chart.js, pero ECharts ofrece un rendimiento superior con grandes
         volúmenes de datos. Con más tiempo, implementaría filtros interactivos
-        por equipo de carga.
-      </p>
+        por equipo de carga."
+      />
     </div>
   );
 };
