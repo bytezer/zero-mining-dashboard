@@ -60,10 +60,11 @@ const CopilotExample = () => {
 
       <InsightNote
         textSize="text-base"
-        text="Elegí un gráfico de dona (Pie adaptado) por su capacidad de mostrar
-        proporciones simples de forma impactante. Implementé una lógica
-        heurística directa para el 'insight'. En una versión avanzada, usaría
-        una arquitectura de micro-servicios para el análisis de datos masivos."
+        text="Elegí un gráfico de dona por su claridad para comparar KPIs globales de un vistazo. 
+        El 'insight' se genera mediante una evaluación lógica de los acumulados. 
+        En una versión escalable, este procesamiento se delegaría al backend mediante 
+        vistas materializadas o consultas SQL agregadas para optimizar el rendimiento 
+        del cliente y permitir actualizaciones en tiempo real."
       />
     </div>
   );
