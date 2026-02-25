@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ListaViajes } from "./components/ListaViajes";
-import { TonelajeMaterial } from "./components/TonelajeMaterial";
-import { DiferenciaTonelaje } from "./components/DiferenciaTonelaje";
-import { CopilotExample } from "./components/CopilotExample";
+import { ListaViajes } from "@zero/components/ListaViajes";
+import { TonelajeMaterial } from "@zero/components/TonelajeMaterial";
+import { DiferenciaTonelaje } from "@zero/components/DiferenciaTonelaje";
+import { CopilotExample } from "@zero/components/CopilotExample";
 
 function App() {
   const [activeTab, setActiveTab] = useState(1);

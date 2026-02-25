@@ -1,5 +1,5 @@
-import { useProductionData } from "../hooks/useProductionData";
-import { InsightNote } from "./InsightNote";
+import { useProductionData } from "@zero/hooks/useProductionData";
+import { InsightNote } from "@zero/components/InsightNote";
 
 export const TonelajeMaterial = () => {
   const { actual } = useProductionData();

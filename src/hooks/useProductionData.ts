@@ -1,7 +1,7 @@
 import { useState } from "react";
-import actData from "../assets/productionact.json";
-import prevData from "../assets/productionprev.json";
-import type { ProductionData } from "../types/production";
+import actData from "@zero/assets/productionact.json";
+import prevData from "@zero/assets/productionprev.json";
+import type { ProductionData } from "@zero/types/production";
 
 export const useProductionData = () => {
   const [data] = useState<{
