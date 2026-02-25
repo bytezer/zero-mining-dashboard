@@ -55,7 +55,7 @@ export const DiferenciaTonelaje = () => {
       <ReactECharts option={option} />
       <InsightNote
         textSize="text-base"
-        text="Abordé esto mapeando las horas relativas de ambos turnos para asegurar una comparación equitativa (matching). Elegí un gráfico de áreas para resaltar visualmente los picos de diferencia."
+        text="Consideré como alternativa un gráfico de barras comparativas (lado a lado), pero el gráfico de área resalta mejor la tendencia de productividad. Si tuviera más tiempo, implementaría un 'tooltip' que desglosara el material específico que causó las mayores variaciones por hora."
       />
     </div>
   );
